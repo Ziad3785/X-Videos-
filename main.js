@@ -24,7 +24,7 @@ document.querySelectorAll('.tab-button').forEach(button => {
     });
 });
 
-// عرض الأفلام
+// عرض الأفلام (الفيديو تحت البوستر مباشرة)
 function displayMovies(movieList) {
     const container = document.getElementById('moviesContainer');
     container.innerHTML = '';
@@ -41,8 +41,9 @@ function displayMovies(movieList) {
             <img src="\( {movie.poster}" alt=" \){movie.title}" loading="lazy">
             <h3>${movie.title} ${movie.year ? '(' + movie.year + ')' : ''}</h3>
             <p>${movie.description}</p>
+            <!-- الفيديو تحت الوصف مباشرة -->
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/${movie.videoId}?rel=0" 
+                <iframe src="https://www.youtube.com/embed/${movie.videoId}?rel=0&autoplay=0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen loading="lazy"></iframe>
             </div>
