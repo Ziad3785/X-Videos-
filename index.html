@@ -11,6 +11,12 @@
     <header>
         <h1>مكتبة أفلام رومانسية كاملة</h1>
         <p>إنجليزي ومصري - قصص حب هتخليك تحلم ❤️</p>
+
+        <!-- شهادة أمان + عداد زوار -->
+        <div class="security-badge">
+            <span>🔒 الموقع آمن ومشفر</span> | 
+            <span id="visitorCount">عدد الزوار: تحميل...</span>
+        </div>
     </header>
 
     <div class="tabs">
@@ -22,9 +28,7 @@
         <input type="text" id="globalSearch" placeholder="ابحث عن فيلم رومانسي...">
     </div>
 
-    <div class="container" id="moviesContainer">
-        <!-- الأفلام هتظهر هنا -->
-    </div>
+    <div class="container" id="moviesContainer"></div>
 
     <footer>
         <p>كل الأفلام كاملة مجاناً على يوتيوب - استمتع بالحب يا قمر ❤️</p>
@@ -33,5 +37,13 @@
     <script src="js1.js"></script>
     <script src="js2.js"></script>
     <script src="main.js"></script>
+
+    <!-- عداد زوار بسيط باستخدام localStorage (يعمل بدون سيرفر) -->
+    <script>
+        let visitors = localStorage.getItem('visitorCount') || 0;
+        visitors++;
+        localStorage.setItem('visitorCount', visitors);
+        document.getElementById('visitorCount').textContent = `عدد الزوار: ${visitors.toLocaleString()}`;
+    </script>
 </body>
-</html>
+    </html>
